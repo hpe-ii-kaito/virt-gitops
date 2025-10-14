@@ -1,0 +1,39 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: rhel10
+spec:
+  running: false
+  dataVolumeTemplates:
+  - metadata:
+      name: ds-rhel10
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel10
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources: {}
+  template:
+    spec:
+      terminationGracePeriodSeconds: 180
+      domain:
+        devices:
+          rng: {}
+        memory:
+          guest: 1024M
+      volumes:
+      - dataVolume:
+          name: ds-rhel10
+        name: ds-rhel10
+      - cloudInitNoCloud:
+          userData: |-
+            #cloud-config
+            user: user
+            password: password
+            chpasswd: { expire: False }
+        name: cloudinitdisk
+      networks:
+      - multus:
+          networkName: hpe-ii/vlan31
+        name: net-0
