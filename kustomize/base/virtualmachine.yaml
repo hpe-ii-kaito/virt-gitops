@@ -17,6 +17,15 @@ spec:
   template:
     spec:
       terminationGracePeriodSeconds: 180
+      accessCredentials:
+      - sshPublicKey:
+          source:
+            secret:
+              secretName: my-pub-key
+          propagationMethod:
+            qemuGuestAgent:
+              users:
+              - user
       domain:
         devices:
           rng: {}
@@ -37,6 +46,16 @@ spec:
             user: user
             password: password
             chpasswd: { expire: False }
+          networkData: |
+            version: 2
+            ethernets:
+              enp2s0:
+                dhcp4: false
+                addresses:
+                - 192.168.31.10/24
+                nameservers:
+                  addresses:
+                  - 192.168.31.122
         name: cloudinitdisk
       networks:
       - name: default
