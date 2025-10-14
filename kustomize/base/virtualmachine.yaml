@@ -27,15 +27,15 @@ spec:
               users:
               - user
       domain:
-        devices:
-          rng: {}
         memory:
           guest: 1024M
-        interfaces:
-          - name: default
-            masquerade: {}
-          - name: net-0
-            bridge: {}
+        devices:
+          rng: {}
+          interfaces:
+            - name: default
+              masquerade: {}
+            - name: net-0
+              bridge: {}
       volumes:
       - dataVolume:
           name: ds-rhel10
