@@ -22,6 +22,11 @@ spec:
           rng: {}
         memory:
           guest: 1024M
+        interfaces:
+          - name: default
+            masquerade: {}
+          - name: net-0
+            bridge: {}
       volumes:
       - dataVolume:
           name: ds-rhel10
@@ -34,6 +39,8 @@ spec:
             chpasswd: { expire: False }
         name: cloudinitdisk
       networks:
+      - name: default
+        pod: {}
       - multus:
           networkName: hpe-ii/vlan31
         name: net-0
