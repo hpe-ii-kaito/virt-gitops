@@ -41,6 +41,8 @@ spec:
       - cloudInitNoCloud:
           userData: |-
             #cloud-config
+            password: password
+            chpasswd: { expire: False }
           networkData: |
             version: 2
             ethernets:
