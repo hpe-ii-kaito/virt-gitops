@@ -19,13 +19,11 @@ spec:
       terminationGracePeriodSeconds: 180
       accessCredentials:
       - sshPublicKey:
+          propagationMethod:
+            noCloud: {}
           source:
             secret:
               secretName: my-pub-key
-          propagationMethod:
-            qemuGuestAgent:
-              users:
-              - user
       domain:
         memory:
           guest: 1024M
