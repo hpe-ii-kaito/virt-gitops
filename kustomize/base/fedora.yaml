@@ -41,6 +41,7 @@ spec:
       - cloudInitNoCloud:
           userData: |-
             #cloud-config
+            user: user
             password: password
             chpasswd: { expire: False }
           networkData: |
