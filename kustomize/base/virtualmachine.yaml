@@ -23,7 +23,7 @@ spec:
             noCloud: {}
           source:
             secret:
-              secretName: my-pub-key
+              secretName: bastion-key
       domain:
         memory:
           guest: 1024M
@@ -41,7 +41,6 @@ spec:
       - cloudInitNoCloud:
           userData: |-
             #cloud-config
-            user: user
             password: password
             chpasswd: { expire: False }
           networkData: |
