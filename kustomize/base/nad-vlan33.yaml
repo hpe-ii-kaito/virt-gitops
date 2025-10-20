@@ -1,0 +1,17 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  name: vlan33
+  namespace: hpe-ii
+spec:
+  config: |-
+    {
+      "cniVersion": "0.3.1",
+      "name": "localnet-vlan33",
+      "type": "ovn-k8s-cni-overlay",
+      "topology": "localnet",
+      "physicalNetworkName": "localnet-vlan33",
+      "vlanID": 33,
+      "netAttachDefName": "hpe-ii/vlan33"
+    }
+

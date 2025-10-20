@@ -4,4 +4,7 @@ kind: Kustomization
 resources:
   - fedora.yaml
   - rhel.yaml
+  - nad-vlan31.yaml
+  - nad-vlan32.yaml
+  - nad-vlan33.yaml
 
