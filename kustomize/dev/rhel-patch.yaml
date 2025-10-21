@@ -36,7 +36,7 @@ spec:
             ethernets:
               enp2s0:
                 addresses:
-                - 192.168.31.11/24
+                - 192.168.31.25/24
         name: cloudinitdisk
       networks:
       - name: default
