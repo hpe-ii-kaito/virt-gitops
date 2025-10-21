@@ -21,6 +21,11 @@ spec:
           name: ds-rhel10
         name: ds-rhel10
       - cloudInitNoCloud:
+          userData: |-
+            #cloud-config
+            user: user
+            password: password
+            chpasswd: { expire: False }
           networkData: |
             ethernets:
               enp2s0:

@@ -21,6 +21,11 @@ spec:
           name: ds-fedora
         name: ds-fedora
       - cloudInitNoCloud:
+          userData: |-
+            #cloud-config
+            user: user
+            password: password
+            chpasswd: { expire: False }
           networkData: |
             ethernets:
               enp2s0:
