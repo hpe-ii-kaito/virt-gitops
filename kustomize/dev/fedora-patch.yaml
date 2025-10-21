@@ -7,6 +7,10 @@ spec:
   template:
     spec:
       domain:
+        cpu:
+          cores: 4
+          sockets: 1
+          threads: 2
         memory:
           guest: 4096M
         devices:
@@ -16,6 +20,7 @@ spec:
               masquerade: {}
             - name: net-0
               bridge: {}
+              model: virtio
       volumes:
       - dataVolume:
           name: ds-fedora
