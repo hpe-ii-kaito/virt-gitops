@@ -45,5 +45,5 @@ spec:
       - name: default
         pod: {}
       - multus:
-          networkName: hpe-ii/dev-vlan31
+          networkName: dev-vlan31
         name: net-0
