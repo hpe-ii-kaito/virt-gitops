@@ -7,4 +7,5 @@ resources:
   - nad-vlan31.yaml
   - nad-vlan32.yaml
   - nad-vlan33.yaml
-
+  - allow-external.yaml
+  - deny-all.yaml

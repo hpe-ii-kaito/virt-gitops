@@ -18,7 +18,19 @@ patches:
   target:
     kind: NetworkAttachmentDefinition
     name: vlan33
-
+- target:
+    kind: MultiNetworkPolicy
+  patch: |-
+    - op: add
+      path: /metadata/annotations/k8s.v1.cni.cncf.io~1policy-for
+      value: hpe-ii/dev-vlan31
+- target:
+    kind: MultiNetworkPolicy
+    name: allow-external
+  patch: |-
+    - op: replace
+      path: /spec/podSelector/matchLabels/vm.kubevirt.io~1name
+      value: dev-fedora
 
 resources:
 - ../base

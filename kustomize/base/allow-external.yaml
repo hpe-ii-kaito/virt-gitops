@@ -1,0 +1,11 @@
+apiVersion: k8s.cni.cncf.io/v1beta1
+kind: MultiNetworkPolicy
+metadata:
+  name: allow-external
+spec:
+  policyTypes:
+  - Ingress
+  podSelector:
+    matchLabels: {}
+  ingress:
+    - {}
