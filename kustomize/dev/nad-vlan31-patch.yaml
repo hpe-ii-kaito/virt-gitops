@@ -1,0 +1,12 @@
+- op: replace
+  path: /spec/config
+  value: |
+    {
+      "cniVersion": "0.3.1",
+      "name": "localnet-vlan31",
+      "type": "ovn-k8s-cni-overlay",
+      "topology": "localnet",
+      "physicalNetworkName": "localnet-vlan31",
+      "vlanID": 31,
+      "netAttachDefName": "hpe-ii/dev-vlan31"
+    }

@@ -3,15 +3,5 @@ kind: NetworkAttachmentDefinition
 metadata:
   name: vlan31
   namespace: hpe-ii
-spec:
-  config: |-
-    {
-      "cniVersion": "0.3.1",
-      "name": "localnet-vlan31",
-      "type": "ovn-k8s-cni-overlay",
-      "topology": "localnet",
-      "physicalNetworkName": "localnet-vlan31",
-      "vlanID": 31,
-      "netAttachDefName": "hpe-ii/vlan31"
-    }
-
+spec: 
+  config:

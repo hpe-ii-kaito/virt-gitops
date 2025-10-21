@@ -4,14 +4,4 @@ metadata:
   name: vlan32
   namespace: hpe-ii
 spec:
-  config: |-
-    {
-      "cniVersion": "0.3.1",
-      "name": "localnet-vlan32",
-      "type": "ovn-k8s-cni-overlay",
-      "topology": "localnet",
-      "physicalNetworkName": "localnet-vlan32",
-      "vlanID": 32,
-      "netAttachDefName": "hpe-ii/vlan32"
-    }
-
+  config: 
