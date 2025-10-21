@@ -17,7 +17,10 @@ spec:
             - name: net-0
               bridge: {}
       volumes:
-      - cloudInitNoCloud:
+      - dataVolume:
+          name: ds-rhel10
+        name: ds-rhel10
+       - cloudInitNoCloud:
           networkData: |
             ethernets:
               enp2s0:
