@@ -5,7 +5,7 @@ namePrefix: dev-
 
 patches:
 - path: fedora-patch.yaml
-#- path: rhel-patch.yaml
+- path: rhel-patch.yaml
 - path: nad-vlan31-patch.yaml
   target:
     kind: NetworkAttachmentDefinition
