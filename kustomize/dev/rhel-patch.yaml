@@ -1,0 +1,36 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: rhel10
+spec:
+  runStrategy: Always
+  template:
+    spec:
+      domain:
+        memory:
+          guest: 4096M
+        devices:
+          rng: {}
+          interfaces:
+            - name: default
+              masquerade: {}
+            - name: net-0
+              bridge: {}
+      volumes:
+      - cloudInitNoCloud:
+          networkData: |
+            ethernets:
+              enp2s0:
+                dhcp4: false
+                addresses:
+                - 192.168.31.11/24
+                nameservers:
+                  addresses:
+                  - 192.168.31.122
+        name: cloudinitdisk
+      networks:
+      - name: default
+        pod: {}
+      - multus:
+          networkName: hpe-ii/dev-vlan31
+        name: net-0

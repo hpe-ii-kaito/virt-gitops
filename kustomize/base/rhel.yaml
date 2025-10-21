@@ -1,16 +1,16 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: fedora
+  name: rhel10
 spec:
   runStrategy: Always
   dataVolumeTemplates:
   - metadata:
-      name: ds-fedora
+      name: ds-rhel10
     spec:
       sourceRef:
         kind: DataSource
-        name: fedora
+        name: rhel10
         namespace: openshift-virtualization-os-images
       storage:
         resources: {}
@@ -36,8 +36,8 @@ spec:
               bridge: {}
       volumes:
       - dataVolume:
-          name: ds-fedora
-        name: ds-fedora
+          name: ds-rhel10
+        name: ds-rhel10
       - cloudInitNoCloud:
           userData: |-
             #cloud-config
