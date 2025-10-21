@@ -20,7 +20,7 @@ spec:
       - dataVolume:
           name: ds-fedora
         name: ds-fedora
-       - cloudInitNoCloud:
+      - cloudInitNoCloud:
           networkData: |
             ethernets:
               enp2s0:

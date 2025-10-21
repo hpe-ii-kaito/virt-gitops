@@ -20,7 +20,7 @@ spec:
       - dataVolume:
           name: ds-rhel10
         name: ds-rhel10
-       - cloudInitNoCloud:
+      - cloudInitNoCloud:
           networkData: |
             ethernets:
               enp2s0:
