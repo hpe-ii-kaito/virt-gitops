@@ -16,6 +16,8 @@ spec:
       role: Primary 
       subnets: 
         - 10.200.0.0/16
+      ipam:
+        lifecycle: Persistent
 ---
 apiVersion: k8s.ovn.org/v1
 kind: ClusterUserDefinedNetwork
