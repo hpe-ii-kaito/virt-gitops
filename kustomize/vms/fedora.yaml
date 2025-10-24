@@ -1,0 +1,41 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: fedora
+spec:
+  runStrategy: Always
+  dataVolumeTemplates:
+  - metadata:
+      name: ds-fedora
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: fedora
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources: {}
+  template:
+    spec:
+      terminationGracePeriodSeconds: 180
+      domain:
+        memory:
+          guest: 1024M
+        devices:
+          rng: {}
+          interfaces:
+            - name: default
+              masquerade: {}
+      volumes:
+      - dataVolume:
+          name: ds-fedora
+        name: ds-fedora
+      - cloudInitNoCloud:
+          userData: |-
+            #cloud-config
+            user: user
+            password: password
+            chpasswd: { expire: False }
+        name: cloudinitdisk
+      networks:
+      - name: default
+        pod: {}
