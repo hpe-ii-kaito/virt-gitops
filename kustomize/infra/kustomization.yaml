@@ -4,4 +4,6 @@ kind: Kustomization
 resources:
 - blue.yaml
 - green.yaml
+- black.yaml
+- white.yaml
 - cudn.yaml
