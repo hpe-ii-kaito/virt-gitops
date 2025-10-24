@@ -1,0 +1,19 @@
+apiVersion: k8s.ovn.org/v1
+kind: ClusterUserDefinedNetwork
+metadata:
+  name: blue-green
+spec:
+  namespaceSelector: 
+    matchExpressions: 
+    - key: kubernetes.io/metadata.name 
+      operator: In 
+      values:
+      - green
+      - blue
+  network: 
+    topology: Layer3 
+    layer3: 
+      role: Primary 
+      subnets: 
+        - cidr: 10.100.0.0/16
+          hostSubnet: 24
