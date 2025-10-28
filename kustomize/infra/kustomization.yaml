@@ -7,3 +7,9 @@ resources:
 - black.yaml
 - white.yaml
 - cudn.yaml
+- tenant-a.yaml
+- tenant-b.yaml
+- tenant-x.yaml
+- tenant-y.yaml
+- udn.yaml
+
