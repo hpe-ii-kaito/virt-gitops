@@ -24,7 +24,8 @@ spec:
           rng: {}
           interfaces:
             - name: default
-              masquerade: {}
+              binding:
+                name: l2bridge
       volumes:
       - dataVolume:
           name: ds-fedora
