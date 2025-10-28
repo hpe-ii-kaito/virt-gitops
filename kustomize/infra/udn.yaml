@@ -4,14 +4,13 @@ metadata:
   name: udn-l2
   namespace: tenant-a
 spec:
-  network: 
-    topology: Layer2 
-    layer2: 
-      role: Primary 
-      subnets: 
-        - 10.10.0.0/24
-      ipam:
-        lifecycle: Persistent
+  topology: Layer2 
+  layer2: 
+    role: Primary 
+    subnets: 
+      - 10.10.0.0/24
+    ipam:
+      lifecycle: Persistent
 ---
 apiVersion: k8s.ovn.org/v1
 kind: UserDefinedNetwork
@@ -19,14 +18,13 @@ metadata:
   name: udn-l2
   namespace: tenant-b
 spec:
-  network: 
-    topology: Layer2 
-    layer2: 
-      role: Primary 
-      subnets: 
-        - 10.10.0.0/24
-      ipam:
-        lifecycle: Persistent
+  topology: Layer2 
+  layer2: 
+    role: Primary 
+    subnets: 
+      - 10.10.0.0/24
+    ipam:
+      lifecycle: Persistent
 ---
 apiVersion: k8s.ovn.org/v1
 kind: UserDefinedNetwork
@@ -34,13 +32,12 @@ metadata:
   name: udn-l3
   namespace: tenant-x
 spec:
-  network: 
-    topology: Layer3 
-    layer3: 
-      role: Primary 
-      subnets: 
-        - cidr: 10.100.0.0/16
-          hostSubnet: 24
+  topology: Layer3 
+  layer3: 
+    role: Primary 
+    subnets: 
+      - cidr: 10.100.0.0/16
+        hostSubnet: 24
 ---
 apiVersion: k8s.ovn.org/v1
 kind: UserDefinedNetwork
@@ -48,10 +45,9 @@ metadata:
   name: udn-l3
   namespace: tenant-y
 spec:
-  network: 
-    topology: Layer3 
-    layer3: 
-      role: Primary 
-      subnets: 
-        - cidr: 10.100.0.0/16
-          hostSubnet: 24
+  topology: Layer3 
+  layer3: 
+    role: Primary 
+    subnets: 
+      - cidr: 10.100.0.0/16
+        hostSubnet: 24
